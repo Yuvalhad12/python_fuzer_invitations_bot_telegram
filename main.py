@@ -9,22 +9,19 @@ from validate_email import validate_email
 def message(update, context):
     text = update.message.text
     if validate_email(text):
-        update.message.reply_text('כתובת אימייל התקבלה.')
-        update.message.reply_text('אנא המתן לקבלת ההזמנה. תהליך זה יכול לקחת כמה דקות')
+        update.message.reply_text('EMAIL ADDRESS RECIEVED')
+        update.message.reply_text('PLEASE WAIT FOR AN INVITATION. THE PROCESS CAN TAKE A FEW MINUTES')
         send_email(text)
-        update.message.reply_text('הזמנה נשלחה בהצלחה! \n שים לב שאם ההזמנה לא התקבלה - כנראה הזנת כתובת אימייל לא נכונה, אתה כבר רשום, או שאולי ההזמנה הגיעה לפח האשפה.')
-        update.message.reply_text('על מנת להרחיב את הקהילה עוד יותר, נשמח אם תוכל לבקש מחברים ואנשים שבעניין להירשם גם כן! \n t.me/FuzerInviteBot')
+        update.message.reply_text('INVITATION WAS SENT SUCCESSFULLY. NOTE THAT IF YOU HAVENT RECIEVED THE INVITATION, YOU EITHER PUT THE WRONG ADRRESS, ALREADY REGISTERED TO THE WEBSITE, OR THE EMAIL IS IN YOUR SPAM FOLDER')
 
     
     else:
-        update.message.reply_text('אנא הזן כתובת אימייל תקנית על מנת לקבל הזמנה. אם אתה לא יודע מה לעשות - הקלד /start')
+        update.message.reply_text('PLEASE PUT AN EMAIL ADDRESS. IF YOU NEED HELP, TYPE /start')
 
 def start(update, context):
     """Send a message when the command /start is issued."""
-    string = """ברוך הבא לבוט ההזמנות של fuzer!
-הבוט פותח על ידי משתמש FXP: The_beat.
-
-על מנת לקבל הזמנה - הזן את כתובת האימייל שלך (מומלצת כתובת אימייל של ג'ימייל), ותקבל הזמנה תוך מספר דקות. 
+    string = """LONG INTRODUCTION BLA BLA
+BLA BLA
 """
     update.message.reply_text(string)
 
